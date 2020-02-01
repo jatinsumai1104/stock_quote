@@ -160,12 +160,16 @@ class Stock
         $query="SELECT * FROM money WHERE user_id={$assoc_array['user_id']}";
           $res = $this->di->get("Database")->rawQuery($query);
           $new_balance = $res[0]["balance"] + $data["sell_quantity"]*$data["realtime_price"];
+          echo $new_balance;
+          
           $res = $this->di->get("Database")->update("money",["balance"=>$new_balance],"user_id={$assoc_array["user_id"]}");
-        $this->di->get("Database")->commit();
-        Session::setSession("delete", "Delete product success");
+
+          $this->di->get("Database")->commit();
+          //die();
+        Session::setSession("sellStockSuccess", "Stock sell success");
     } catch (Exception $e) {
         $this->di->get("Database")->rollback();
-        Session::setSession("delete", "Delete product error");
+        Session::setSession("sellStockFailed", "some shitty error");
     }
   }
 

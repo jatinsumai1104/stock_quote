@@ -82,7 +82,8 @@ require_once('../includes/header.php');
                                                         <?php
                                                         $user_id = Session::getSession("user_id");
                                                         $symbol = $_GET['symbol'];
-                                                        $query="SELECT * FROM stock_intraday WHERE user_id={$user_id} and stock_name={$symbol}";
+                                                        $query="SELECT * FROM stock_intraday WHERE user_id={$user_id} and stock_name='{$symbol}'";
+                                                        //echo $query;
                                                         $res = $di->get("Database")->rawQuery($query);
                                                         if(count($res) > 0){
                                                         ?>
@@ -100,7 +101,7 @@ require_once('../includes/header.php');
                                                         <?php
                                                         $user_id = Session::getSession("user_id");
                                                         $symbol = $_GET['symbol'];
-                                                        $query="SELECT * FROM stock_delivery WHERE user_id={$user_id} and stock_name={$symbol}";
+                                                        $query="SELECT * FROM stock_delivery WHERE user_id={$user_id} and stock_name='{$symbol}'";
                                                         $res = $di->get("Database")->rawQuery($query);
                                                         if(count($res) > 0){
                                                         ?>
