@@ -13,6 +13,19 @@ require_once "init.php";
 //     }
 // }
 
+
+//Add Watch List
+if (isset($_POST['add_watch_list'])) {
+  // var_dump($_POST);
+    if (Util::verifyCSRF($_POST)) {
+        $di->get("WatchList")->addWatchList($_POST);
+        Util::redirect("index");
+    }else{
+        Session::setSession("csrf", "CSRF error");
+        Util::redirect("login");
+    }
+}
+
 //Auth Routings
 if (isset($_POST['login_details'])) {
   if (isset($_POST['csrf_token']) && isset($_SESSION["csrf_token"]) && $_POST['csrf_token'] == Session::getSession("csrf_token")) {

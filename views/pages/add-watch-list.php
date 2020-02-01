@@ -65,14 +65,14 @@ require_once('../includes/header.php');
 
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="">Category Name</label>
+                                                        <label for="">Watch List Name</label>
                                                         <input type="text" class="form-control" name="name" id=""
-                                                            aria-describedby="helpId" placeholder="Category Name">
+                                                            aria-describedby="helpId" placeholder="Watch List Name">
                                                     </div>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary"
-                                                name="add_category">Submit</button>
+                                                name="add_watch_list">Submit</button>
                                         </div>
                                     </form>
                                 </div>
