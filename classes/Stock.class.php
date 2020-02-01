@@ -124,13 +124,24 @@ class Stock
   
 
     public function getStocksQuantity($user_id){
+        $res = [];
         $query = "SELECT *, 'intraday' as delivery_type FROM stock_intraday WHERE user_id = $user_id";
-        $res = $this->di->get("Database")->rawQuery($query);
+        $temp = $this->di->get("Database")->rawQuery($query);
+        if(count($temp) != 0){
+            $res = $temp;
+        }
         $query = "SELECT *, 'delivery' as delivery_type FROM stock_delivery WHERE user_id = $user_id";
-        array_push($res, $this->di->get("Database")->rawQuery($query));
+        $temp = $this->di->get("Database")->rawQuery($query);
+        if(count($temp) != 0){
+            if(count($res) == 0){
+                $res = $temp;
+            }else{
+                array_push($res, $temp);
+            }
+        }
+        
         return $res;
     }
-             
 
 }
 ?>
