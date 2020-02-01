@@ -3,6 +3,7 @@
   require_once('../../helper/constants.php');
   require_once(__DIR__.'/../../helper/init.php');
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +43,15 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <a href="<?php echo BASEPAGES?>search-stock.php?watch_list=<?php  echo  $_GET['watch_list']; ?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Stocks Into Watch List</a>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+    
+            <!-- Earnings (Monthly) Card Example -->
+            
             <h1 class="h3 mb-0 text-gray-800">Watch List</h1>
             <a href="#" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Stocks Into Watch List</a>
           </div>
