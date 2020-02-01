@@ -76,6 +76,8 @@ require_once('../includes/header.php');
                                                         <input type="text" class="form-control" name="quantity" 
                                                             aria-describedby="helpId" placeholder="">
                                                     </div>
+                                                    <button type="submit" class="btn btn-primary" name="saveStock">Buy Stock</button>
+                                                    </div><div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="">Order Complexity</label>
                                                         <select name="order_complexity" id="supplier_id"
@@ -106,10 +108,8 @@ require_once('../includes/header.php');
                                                             
                                                         </div>
                                                     </div>
-
-                                                    <button type="submit" class="btn btn-primary" name="saveStock">Buy Stock</button>
-
                                                 </div>
+                                                
 
                             </form>
                                 </div>

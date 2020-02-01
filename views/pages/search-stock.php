@@ -43,17 +43,27 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Add Stock</h1>
           </div>
-            <input type="text" id="search-text">
-            <input type="submit" id="search">  
+            <!-- <input type="text" id="search-text">
+            <input type="submit" id="search">   -->
+            <div class="form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search mb-5">
+              <div class="input-group">
+                <input type="text" id="search-text" class="form-control bg-light border-0 small" placeholder="Search Stock..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" id="search">
+                    <i class="fas fa-search fa-sm"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           <!-- Content Row -->
           <!-- <div class="row"> -->
-            <div id="elements" class="card shadow mb-4">
+            <div id="elements" class="card shadow mb-4 mt-4">
             </div>
             <!-- Earnings (Monthly) Card Example -->
             
-
+            
             
 
 
