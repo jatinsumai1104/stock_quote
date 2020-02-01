@@ -64,12 +64,12 @@ require_once('../includes/header.php');
                                                     <div class="form-group">
                                                         <label for="">Stock Name</label>
                                                         <input type="text" class="form-control" name="stock_name"
-                                                            aria-describedby="helpId" placeholder="" value="GOOG">
+                                                            aria-describedby="helpId" placeholder="" value="<?php  echo $_GET['symbol']?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">PRICE</label>
                                                         <input type="text" class="form-control" name="stock_price"
-                                                             aria-describedby="helpId" placeholder="" value="100">
+                                                             aria-describedby="helpId" placeholder="" value="<?php echo $_GET['price']?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">Quantity</label>
