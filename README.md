@@ -1,1 +1,3 @@
-# oop-php-erp
+# UpStock
+
+Trading Application
