@@ -22,4 +22,5 @@ $di->set("Purchase", new Purchase($di));
 $di->set("User",new User($di));
 $di->set("WatchList", new WatchList($di));
 $di->set("Stock", new Stock($di));
+$di->set("TransactionHistory",new TransactionHistory($di));
 $di->get("TokenHandler")->build();

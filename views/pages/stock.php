@@ -174,6 +174,8 @@
               $("#close").text(data.data[0].close_yesterday);
               $("#high").text(data.data[0].day_high);
               $("#low").text(data.data[0].day_low);
+              $("#buy").attr('href',"<?php echo BASEPAGES?>add-buy.php?symbol="+data.data[0].symbol+"&price="+data.data[0].price);
+              $("#sell").attr('href',"<?php echo BASEPAGES?>add-sales.php?symbol="+data.data[0].symbol+"&price="+data.data[0].price);
               // $("#weak_high").text(data.data[0].52_week_high);
               // $("#weak_low").text(data.data[0].52_week_low);
 
