@@ -43,21 +43,19 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Watch List</h1>
-            <a href="#" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Stocks Into Watch List</a>
+            <a href="#" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="price"></a>
           </div>
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-around">
-              <h2 class="m-0 font-weight-bold text-primary"> Nifty -2.0</h2>
+              <h2 class="m-0 font-weight-bold text-primary" id="name"> </h2>
             </div>
             <div class="card-body py-3" style="height:800px">
               <div id="chartdiv" style="height:80%"></div>
               <div class="row">
-                <div class="col-md-6 border">Open <span class="float-right">100</span></div>
-                <div class="col-md-6 border">Low <span class="float-right">100</span></div>
-                <div class="col-md-6 border">High <span class="float-right">100</span></div>
-                <div class="col-md-6 border">Close <span class="float-right">100</span></div>
-                <div class="col-md-6 border">52 Wk High <span class="float-right">100</span></div>
-                <div class="col-md-6 border">52 Wk Low <span class="float-right">100</span></div>
+                <div class="col-md-6 border">Open <span class="float-right" id="open"></span></div>
+                <div class="col-md-6 border">Low <span class="float-right" id="low"></span></div>
+                <div class="col-md-6 border">High <span class="float-right" id="high"></span></div>
+                <div class="col-md-6 border">Close <span class="float-right" id="close"></span></div>
               </div>
             </div>
           </div>
@@ -161,7 +159,31 @@
           });
       }
       chart.data = d;
-  }
+  
+    }
+
+    $.ajax({
+            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=<?php echo $_GET['stock_name']?>&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd",
+            method: "GET",
+            dataType: "json",
+            success: function(data) {
+              console.log(data.data);
+              $("#price").text(data.data[0].price);
+              $("#name").text(data.data[0].name);
+              $("#open").text(data.data[0].price_open);
+              $("#close").text(data.data[0].close_yesterday);
+              $("#high").text(data.data[0].day_high);
+              $("#low").text(data.data[0].day_low);
+              // $("#weak_high").text(data.data[0].52_week_high);
+              // $("#weak_low").text(data.data[0].52_week_low);
+
+                
+            },
+            error: function(error) {
+              console.log(error);
+            }
+          });
+    
 
   });
 </script>
