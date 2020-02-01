@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2020 at 02:07 PM
+-- Generation Time: Feb 01, 2020 at 04:53 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -84,14 +84,22 @@ CREATE TABLE `transaction_history` (
   `id` int(10) NOT NULL,
   `user_id` int(10) NOT NULL,
   `stock_name` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `transaction_status` int(10) NOT NULL,
-  `simple_delivery` int(10) NOT NULL,
+  `order_complexity` int(10) NOT NULL,
   `intra_delivery` int(10) NOT NULL,
   `transaction_price_type` int(10) NOT NULL,
   `buy_sell` int(10) NOT NULL,
   `price` int(10) NOT NULL,
   `transaction_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaction_history`
+--
+
+INSERT INTO `transaction_history` (`id`, `user_id`, `stock_name`, `quantity`, `transaction_status`, `order_complexity`, `intra_delivery`, `transaction_price_type`, `buy_sell`, `price`, `transaction_date`) VALUES
+(1, 1, 'GOOG', 0, 0, 0, 1, 1, 0, 98, '2020-01-30');
 
 -- --------------------------------------------------------
 
@@ -129,6 +137,14 @@ CREATE TABLE `watch_list` (
   `deleted` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `watch_list`
+--
+
+INSERT INTO `watch_list` (`id`, `user_id`, `watch_list_name`, `deleted`) VALUES
+(1, 1, 'Testing', 0),
+(2, 1, 'Jatin Sumai', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -140,6 +156,15 @@ CREATE TABLE `watch_list_stock` (
   `watch_list_id` int(10) NOT NULL,
   `stock_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `watch_list_stock`
+--
+
+INSERT INTO `watch_list_stock` (`id`, `watch_list_id`, `stock_name`) VALUES
+(1, 1, 'GOOG'),
+(2, 1, 'APPL'),
+(3, 2, 'BOI');
 
 --
 -- Indexes for dumped tables
@@ -226,7 +251,7 @@ ALTER TABLE `tokens`
 -- AUTO_INCREMENT for table `transaction_history`
 --
 ALTER TABLE `transaction_history`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -238,13 +263,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `watch_list`
 --
 ALTER TABLE `watch_list`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `watch_list_stock`
 --
 ALTER TABLE `watch_list_stock`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
