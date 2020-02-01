@@ -18,5 +18,4 @@
   <link href="<?php echo BASEASSETS;?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   <!-- Custom styles for toastr -->
   <link href="<?php echo BASEASSETS;?>vendor/bootstrap-toastr/toastr.min.css" rel="stylesheet">  
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 </head>

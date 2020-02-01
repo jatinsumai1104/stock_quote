@@ -1,6 +1,8 @@
+
 <?php
 require_once('../../helper/constants.php');
 require_once(__DIR__.'/../../helper/init.php');
+$di->get("Database");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +47,7 @@ require_once('../includes/header.php');
 
                     <!-- Content Row -->
                     <div class="container-fluid">
-                    <table class="table table-bordered">
+                      <table class="table table-bordered">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">Stock Name</th>
@@ -61,9 +63,9 @@ require_once('../includes/header.php');
                             foreach($stocks as $stock){
                           ?>
                           <tr>
-                            <th scope="row">GOOGL</th>
-                            <td>Delivery</td>
-                            <td>10</td>
+                            <th scope="row"><?php echo $stock["stock_name"]?></th>
+                            <td><?php echo $stock["quantity"]?></td>
+                            <td><?php echo $stock["delivery_type"]?></td>
                             <td><a href="" class="btn btn-success" style="width:100%">Buy</a></td>
                             <td><a href="" class="btn btn-danger" style="width:100%">Sell</a></td>
                           </tr>
@@ -93,5 +95,5 @@ require_once('../includes/header.php');
 ?>
 
 </body>
-<script src="<?php echo BASEASSETS; ?>js/add-buy.js"></script>
+
 </html>
