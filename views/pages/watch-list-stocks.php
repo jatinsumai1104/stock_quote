@@ -53,15 +53,13 @@
             <!-- Earnings (Monthly) Card Example -->
             
             <h1 class="h3 mb-0 text-gray-800">Watch List</h1>
-            <a href="#" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Stocks Into Watch List</a>
           </div>
           
           <?php 
           
           $stocks = $di->get("WatchList")->getStocksNameByID($_GET["watch_list"]);
-          foreach($stocks as $stock){
           ?>
-            <a href="<?php echo BASEPAGES?>stock.php?stock_name=<?php echo $stock["stock_name"];?>">
+            <!-- <a href="<?php echo BASEPAGES?>stock.php?stock_name=<?php echo $stock["stock_name"];?>">
               <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex justify-content-around">
                     <h6 class="m-0 font-weight-bold text-primary"> <?php echo $stock["stock_name"];?>
@@ -70,8 +68,14 @@
                     <small class="m-0 font-weight-bold text-primary" id="day_change">hi</small>
                 </div>
               </div>
-            </a>
-          <?php } ?>
+            </a> -->
+          <?php
+          $str = "";
+            foreach($stocks as $stock){
+              $str = $str . "," . $stock['stock_name'];
+            }
+            $str = trim($str,",");
+          ?>
           <!-- Content Row -->
         </div>
         <!-- /.container-fluid -->
