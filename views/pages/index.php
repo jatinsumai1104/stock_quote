@@ -3,10 +3,6 @@
   require_once('../../helper/constants.php');
   require_once(__DIR__.'/../../helper/init.php');
 
-if(!isset($_SESSION['employee_id'])){
-  Util::redirect("login");
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,27 +161,6 @@ if(!isset($_SESSION['employee_id'])){
   <?php
     require_once('../includes/scripts.php');
   ?>
-  <script>
-              var chartData = <?php echo json_encode($quantity); ?>;
-              var labelData = <?php echo json_encode($categories); ?>;
-              // alert(quantity);
-              renderPieChart(chartData,labelData,"Category Quantity");
-            </script>
 
 </body>
-
-
-
 </html>
-
-
-
-<script>
-var allLabels = <?php echo json_encode($monthYearLabels); ?>;
-var allData = <?php echo json_encode($eachMonthData); ?>;
-loadCharts(allLabels,allData);
-
-var allLabels2 = <?php echo json_encode($monthYearLabels2); ?>;
-var allData2 = <?php echo json_encode($eachMonthData2); ?>;
-loadSalesCharts(allLabels2,allData2);
-</script>
