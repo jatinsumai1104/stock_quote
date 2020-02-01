@@ -122,5 +122,42 @@ class Stock
       }
   }
 
+
+  public function sellStock($data){
+    try {
+        $this->di->get("Database")->beginTransaction();
+        $assoc_array["user_id"]  = Session::getSession("user_id");
+        if($data["order_type"] == "Intraday"){
+            $query = "SELECT * FROM stock_intraday WHERE user_id={$assoc_array['user_id']} and stock_name = '{$data["stock_name"]}'";
+            $res = $this->di->get("Database")->rawQuery($query);
+            $new_quantity = $res[0]["quantity"]-$data["sell_quantity"]; 
+            if($new_quantity > 0){  
+            $res = $this->di->get("Database")->update("stock_intraday",["quantity"=>$new_quantity],"user_id={$assoc_array["user_id"]} and stock_name = '{$data["stock_name"]}'");
+            }else{
+                Session::setSession("sellStockFail", "Not enough quantity to sell");
+            }
+        }else{
+            $query = "SELECT * FROM stock_delivery WHERE user_id={$assoc_array['user_id']} and stock_name = '{$data["stock_name"]}'";
+            $res = $this->di->get("Database")->rawQuery($query);
+            $new_quantity = $res[0]["quantity"]-$data["sell_quantity"];   
+            if($new_quantity > 0){  
+                $res = $this->di->get("Database")->update("stock_delivery",["quantity"=>$new_quantity],"user_id={$assoc_array["user_id"]} and stock_name = '{$data["stock_name"]}'");
+                }else{
+                    Session::setSession("sellStockFail", "Not enough quantity to sell");
+                }
+        }
+
+        $query="SELECT * FROM money WHERE user_id={$assoc_array['user_id']}";
+          $res = $this->di->get("Database")->rawQuery($query);
+          $new_balance = $res[0]["balance"] + $data["sell_quantity"]*$data["realtime_price"];
+          $res = $this->di->get("Database")->update("money",["balance"=>$new_balance],"user_id={$assoc_array["user_id"]}");
+        $this->di->get("Database")->commit();
+        Session::setSession("delete", "Delete product success");
+    } catch (Exception $e) {
+        $this->di->get("Database")->rollback();
+        Session::setSession("delete", "Delete product error");
+    }
+  }
+
 }
 ?>
