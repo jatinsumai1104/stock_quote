@@ -60,6 +60,7 @@ require_once('../includes/header.php');
                         <tbody>
                           <?php 
                             $stocks = $di->get("Stock")->getStocksQuantity(Session::getSession("user_id"));
+                            var_dump($stocks);
                             foreach($stocks as $stock){
                           ?>
                           <tr>
