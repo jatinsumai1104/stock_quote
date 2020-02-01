@@ -19,5 +19,6 @@ $di->set("Category", new Category($di));
 $di->set("Customer", new Customer($di));
 $di->set("Sale", new Sale($di));
 $di->set("Purchase", new Purchase($di));
+$di->set("User",new User($di));
 
 $di->get("TokenHandler")->build();

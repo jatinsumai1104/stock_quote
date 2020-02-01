@@ -34,4 +34,3 @@ if (isset($_POST['logout'])){
   }
   Util::redirect("login");
 }
-
