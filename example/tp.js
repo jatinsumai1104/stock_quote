@@ -18,7 +18,7 @@
 $("#button").on("click", function() {
     //    setInterval(function(){
         $.ajax({
-            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=GOOG&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd",
+            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=AAPL&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd",
             method: "GET",
             dataType: "json",
             success: function(data) {
