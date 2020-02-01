@@ -20,5 +20,6 @@ $di->set("Customer", new Customer($di));
 $di->set("Sale", new Sale($di));
 $di->set("Purchase", new Purchase($di));
 $di->set("WatchList", new WatchList($di));
+$di->set("Stock", new Stock($di));
 
 $di->get("TokenHandler")->build();

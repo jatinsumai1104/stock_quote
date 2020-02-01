@@ -50,4 +50,6 @@ if (isset($_POST['logout'])){
 
 if (isset($_POST['saveStock'])) {
   $di->get("Stock")->saveStock($_POST);
+  Util::redirect("index");
+}
 

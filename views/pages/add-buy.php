@@ -69,7 +69,7 @@ require_once('../includes/header.php');
                                                     <div class="form-group">
                                                         <label for="">PRICE</label>
                                                         <input type="text" class="form-control" name="stock_price"
-                                                             aria-describedby="helpId" placeholder="" value="0">
+                                                             aria-describedby="helpId" placeholder="" value="100">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">Quantity</label>
