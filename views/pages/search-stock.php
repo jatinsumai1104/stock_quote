@@ -89,8 +89,7 @@
         $("#search").click(function(){
             text = $("#search-text").val();
             $.ajax({
-            url: "https://api.worldtradingdata.com/api/v1/stock?symbol="+text+"&api_token=ayP0nLDZrCtoAE0RVEFqN89HFdjjp6ahIlzFnq4vxeQU73QQDdiWqe5u9yDO
-",
+            url: "https://api.worldtradingdata.com/api/v1/stock?symbol="+text+"&api_token=ayP0nLDZrCtoAE0RVEFqN89HFdjjp6ahIlzFnq4vxeQU73QQDdiWqe5u9yDO",
             method: "GET",
             dataType: "json",
             success: function(data) {
