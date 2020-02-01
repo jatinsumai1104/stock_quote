@@ -70,15 +70,15 @@
     <span>LeaderBoard</span></a>
 </li>
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#buy_sell" aria-expanded="true" aria-controls="product">
-    <i class="fas fa-fw fa-list"></i>
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#transaction_history" aria-expanded="true" aria-controls="product">
+    <i class="fas fa-fw fa-history"></i>
     <span>Transaction History</span>
   </a>
-  <div id="buy_sell" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div id="transaction_history" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-      <a href="<?php echo BASEPAGES?>transaction-history.php" class="collapse-item"><i class="fas fa-plus"></i>All Transactions</a>
-      <a href="<?php echo BASEPAGES?>transaction-history-open.php" class="collapse-item"><i class="fas fa-plus"></i>Open Transactions</a>
-      <a href="<?php echo BASEPAGES?>transaction-history-closed.php" class="collapse-item"><i class="fas fa-plus"></i>Closed Transactions</a>
+      <a href="<?php echo BASEPAGES?>transaction-history.php" class="collapse-item"><i class="fas fa-plus"></i> All Transactions</a>
+      <a href="<?php echo BASEPAGES?>transaction-history-open.php" class="collapse-item"><i class="fas fa-plus"></i> Open Transactions</a>
+      <a href="<?php echo BASEPAGES?>transaction-history-closed.php" class="collapse-item"><i class="fas fa-plus"></i> Closed Transactions</a>
     </div>
   </div>
 </li>
