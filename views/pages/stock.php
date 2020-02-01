@@ -66,8 +66,8 @@
       </div>
       <!-- End of Main Content -->
       <div class="buy_sell_button d-flex justify-content-between container">
-        <a class="d-sm-inline-block btn btn-success shadow-sm mr-3"  href="<?php echo BASEPAGES?>add-buy.php" style="z-index:1000;width:40%"><i class="fa fa-shopping-cart pr-2" aria-hidden="true"></i>Buy</a>
-        <a class="d-sm-inline-block btn btn-danger shadow-sm mr-3"  href="<?php echo BASEPAGES?>add-buy.php" style="z-index:1000;width:40%"><i class="fa fa-book-dead pr-2" aria-hidden="true"></i>Sell</a>
+        <a class="d-sm-inline-block btn btn-success shadow-sm mr-3"  href="<?php echo BASEPAGES?>add-buy.php" style="z-index:1000;width:40%"  id="buy"><i class="fa fa-shopping-cart pr-2" aria-hidden="true"></i>Buy</a>
+        <a class="d-sm-inline-block btn btn-danger shadow-sm mr-3"  href="<?php echo BASEPAGES?>add-buy.php" style="z-index:1000;width:40%" id="sell"><i class="fa fa-book-dead pr-2" aria-hidden="true" ></i>Sell</a>
       </div>
       <!-- Footer -->
       <?php
