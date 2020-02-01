@@ -66,8 +66,14 @@
       </div>
       <!-- End of Main Content -->
       <div class="buy_sell_button d-flex justify-content-between container">
-        <a class="d-sm-inline-block btn btn-success shadow-sm mr-3" data-toggle="tab" href="#disabilities" role="tab" aria-controls="disabilities" aria-selected="true" style="z-index:1000;width:40%"><i class="fa fa-shopping-cart pr-2" aria-hidden="true"></i>Buy</a>
-        <a class="d-sm-inline-block btn btn-danger shadow-sm mr-3" data-toggle="tab" href="#disabilities" role="tab" aria-controls="disabilities" aria-selected="true" style="z-index:1000;width:40%"><i class="fa fa-book-dead pr-2" aria-hidden="true"></i>Sell</a>
+      <!-- <form action="" method="post">
+        <input type="text" hidden name="stock_name" class="stock_name">
+        <input type="text" hidden name="stock_price" class="stock_price">
+        <input type="submit" class="d-sm-inline-block btn btn-success shadow-sm mr-3" data-toggle="tab" href="#disabilities" role="tab" aria-controls="disabilities" aria-selected="true" style="z-index:1000;width:40%" value="Buy">
+      
+      </form> -->
+        <a class="d-sm-inline-block btn btn-success shadow-sm mr-3"  id="buy" href="#"  style="z-index:1000;width:40%"><i class="fa fa-shopping-cart pr-2" aria-hidden="true"></i>Buy</a>
+        <a class="d-sm-inline-block btn btn-danger shadow-sm mr-3"  id="sell" href="#"  style="z-index:1000;width:40%"><i class="fa fa-book-dead pr-2" aria-hidden="true"></i>Sell</a>
       </div>
       <!-- Footer -->
       <?php
@@ -174,6 +180,8 @@
               $("#close").text(data.data[0].close_yesterday);
               $("#high").text(data.data[0].day_high);
               $("#low").text(data.data[0].day_low);
+              $("#buy").attr('href',"<?php echo BASEPAGES?>add-buy.php?symbol="+data.data[0].symbol+"&price="+data.data[0].price);
+              $("#sell").attr('href',"<?php echo BASEPAGES?>add-sales.php?symbol="+data.data[0].symbol+"&price="+data.data[0].price);
               // $("#weak_high").text(data.data[0].52_week_high);
               // $("#weak_low").text(data.data[0].52_week_low);
 
