@@ -24,4 +24,8 @@ require_once "{$app}/../classes/Category.class.php";
 require_once "{$app}/../classes/Customer.class.php";
 require_once "{$app}/../classes/Sale.class.php";
 require_once "{$app}/../classes/Purchase.class.php";
+<<<<<<< HEAD
 require_once "{$app}/../classes/User.class.php";
+=======
+require_once "{$app}/../classes/WatchList.class.php";
+>>>>>>> fd427e784d799e39cb8fb545916dc58269e31e5f
