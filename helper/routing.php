@@ -48,3 +48,6 @@ if (isset($_POST['logout'])){
   Util::redirect("login");
 }
 
+if (isset($_POST['saveStock'])) {
+  $di->get("Stock")->saveStock($_POST);
+
