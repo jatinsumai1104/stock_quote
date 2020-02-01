@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2020 at 01:30 PM
+-- Generation Time: Feb 01, 2020 at 01:51 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -89,9 +89,9 @@ CREATE TABLE `user` (
   `id` int(10) NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `phone_number` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `DOB` date NOT NULL
+  `DOB` date NOT NULL,
+  `phone_number` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -151,8 +151,7 @@ ALTER TABLE `transaction_history`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `phone_number` (`phone_number`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `watch_list`
