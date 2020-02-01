@@ -47,3 +47,11 @@ if (isset($_POST['logout'])){
   }
   Util::redirect("login");
 }
+
+
+if(isset($_POST['add_watch'])){
+    
+    $di->get("WatchList")->addStock($_POST['watch_list'],$_POST['symbol']);
+    
+    Util::redirect('index');
+}

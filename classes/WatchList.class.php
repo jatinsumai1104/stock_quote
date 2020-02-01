@@ -47,6 +47,17 @@ class WatchList
       }
     }
 
+
+    public function addStock($watch_list_id , $stock_name){
+      try{
+        $this->di->get("Database")->beginTransaction();
+        $query = "INSERT INTO watch_list_stock(watch_list_id,stock_name) VALUES('$watch_list_id','$stock_name')";
+        $this->di->get("Database")->query($query);
+        $this->di->get("Database")->commit();
+      }catch(Exception $e){
+        $this->di->get("Database")->rollback();
+      }      
+    }
     
 
     public function delete($data){
