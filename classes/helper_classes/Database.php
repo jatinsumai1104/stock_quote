@@ -28,7 +28,7 @@ class Database {
     }
 
     public function rawQuery($sql){
-        // echo $sql;
+         //echo $sql;
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -92,7 +92,7 @@ class Database {
 			$columnValueSet .= $key. "='".$value."'".$comma;
 			$i++;
 		}
-		$sql = "update {$table} set {$columnValueSet}, updated_at = now() where {$condition} ";
+		$sql = "update {$table} set {$columnValueSet} where {$condition} ";
         echo $sql;
         $this->stmt = $this->pdo->prepare($sql);
         $this->stmt->execute();
