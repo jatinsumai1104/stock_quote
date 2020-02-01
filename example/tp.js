@@ -1,4 +1,4 @@
-//https://api.worldtradingdata.com/api/v1/stock?symbol=SNAP,TWTR,VOD.L&api_token=ItUyZsdrPdMoBzkPVujqiQXgFDrCBubbCVXiA8jTCQ5LRZyR9cuRltxZBEiA
+//https://api.worldtradingdata.com/api/v1/stock?symbol=SNAP,TWTR,VOD.L&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd
 // const url = new URL(
 //     "https://api.worldtradingdata.com/api/v1/stock"
 // );
@@ -18,7 +18,7 @@
 $("#button").on("click", function() {
     //    setInterval(function(){
         $.ajax({
-            url: "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=BZUN&interval=5min&apikey=FE8RI8EEFEOSO6LR",
+            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=GOOG&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd",
             method: "GET",
             dataType: "json",
             success: function(data) {
