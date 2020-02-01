@@ -11,7 +11,7 @@
   <!-- <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div> -->
-  <div class="sidebar-brand-text mx-3"><img src="<?php echo BASEASSETS;?>img/title2.png" class="img-fluid" alt=""></div>
+  <div class="sidebar-brand-text mx-3"><img src="<?php echo BASEASSETS;?>img/title-3.png" class="img-fluid" alt=""></div>
 </a>
 
 <!-- Divider -->
