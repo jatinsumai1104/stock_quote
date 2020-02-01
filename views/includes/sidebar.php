@@ -36,10 +36,11 @@
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#product" aria-expanded="true" aria-controls="product">
     <i class="fas fa-fw fa-cubes"></i>
-    <span>Product</span>
+    <span>Watch List</span>
   </a>
   <div id="product" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
+      <a href="<?php echo BASEPAGES?>add-watch-list.php" class="collapse-item"><i class="fas fa-plus"></i> Add Watch List</a>
       <a class="collapse-item" href="<?php echo BASEPAGES?>add-product.php">Add Product</a>
       <a class="collapse-item" href="<?php echo BASEPAGES?>manage-product.php">Manage Product</a>
     </div>
