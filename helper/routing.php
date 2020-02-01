@@ -53,3 +53,10 @@ if (isset($_POST['saveStock'])) {
   Util::redirect("index");
 }
 
+
+if(isset($_POST['add_watch'])){
+    
+    $di->get("WatchList")->addStock($_POST['watch_list'],$_POST['symbol']);
+    
+    Util::redirect('index');
+}
