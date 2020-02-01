@@ -66,14 +66,8 @@
       </div>
       <!-- End of Main Content -->
       <div class="buy_sell_button d-flex justify-content-between container">
-      <!-- <form action="" method="post">
-        <input type="text" hidden name="stock_name" class="stock_name">
-        <input type="text" hidden name="stock_price" class="stock_price">
-        <input type="submit" class="d-sm-inline-block btn btn-success shadow-sm mr-3" data-toggle="tab" href="#disabilities" role="tab" aria-controls="disabilities" aria-selected="true" style="z-index:1000;width:40%" value="Buy">
-      
-      </form> -->
-        <a class="d-sm-inline-block btn btn-success shadow-sm mr-3"  id="buy" href="#"  style="z-index:1000;width:40%"><i class="fa fa-shopping-cart pr-2" aria-hidden="true"></i>Buy</a>
-        <a class="d-sm-inline-block btn btn-danger shadow-sm mr-3"  id="sell" href="#"  style="z-index:1000;width:40%"><i class="fa fa-book-dead pr-2" aria-hidden="true"></i>Sell</a>
+        <a class="d-sm-inline-block btn btn-success shadow-sm mr-3"  href="<?php echo BASEPAGES?>add-buy.php" style="z-index:1000;width:40%"  id="buy"><i class="fa fa-shopping-cart pr-2" aria-hidden="true"></i>Buy</a>
+        <a class="d-sm-inline-block btn btn-danger shadow-sm mr-3"  href="<?php echo BASEPAGES?>add-buy.php" style="z-index:1000;width:40%" id="sell"><i class="fa fa-book-dead pr-2" aria-hidden="true" ></i>Sell</a>
       </div>
       <!-- Footer -->
       <?php
@@ -146,7 +140,7 @@
   scrollbarX.series.push(lineSeries);
   chart.scrollbarX = scrollbarX;
 
-  $.getJSON("https://api.worldtradingdata.com/api/v1/history?symbol=SNAP&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd", parseData);    
+  $.getJSON("https://api.worldtradingdata.com/api/v1/history?symbol=SNAP&api_token=ayP0nLDZrCtoAE0RVEFqN89HFdjjp6ahIlzFnq4vxeQU73QQDdiWqe5u9yDO", parseData);    
   // chart.data = [];
   function parseData(result){        
       var index = [];
@@ -169,7 +163,7 @@
     }
 
     $.ajax({
-            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=<?php echo $_GET['stock_name']?>&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd",
+            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=<?php echo $_GET['stock_name']?>&api_token=ayP0nLDZrCtoAE0RVEFqN89HFdjjp6ahIlzFnq4vxeQU73QQDdiWqe5u9yDO",
             method: "GET",
             dataType: "json",
             success: function(data) {

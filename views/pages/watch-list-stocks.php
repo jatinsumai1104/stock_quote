@@ -43,10 +43,10 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Watch List</h1>
             <a href="<?php echo BASEPAGES?>search-stock.php?watch_list=<?php  echo  $_GET['watch_list']; ?>" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Stocks Into Watch List</a>
           </div>
-          <h1 class="h3 mb-0 text-gray-800">Watch List</h1>
+          <!-- <h1 class="h3 mb-0 text-gray-800">Watch List</h1> -->
           <!-- Content Row -->
           <div class="" id="row">
     
@@ -105,7 +105,7 @@
         
   <script>
     $.ajax({
-            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=<?php  echo $str?>&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd",
+            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=<?php  echo $str?>&api_token=ayP0nLDZrCtoAE0RVEFqN89HFdjjp6ahIlzFnq4vxeQU73QQDdiWqe5u9yDO",
             method: "GET",
             dataType: "json",
             success: function(data) {

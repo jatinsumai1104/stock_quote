@@ -11,7 +11,7 @@
   <!-- <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div> -->
-  <div class="sidebar-brand-text mx-3"><img src="<?php echo BASEASSETS;?>img/title-4.png" class="img-fluid" alt=""></div>
+  <div class="sidebar-brand-text mx-3 d-flex"><img src="<?php echo BASEASSETS;?>img/logo-5.png" class="img-fluid" alt="" width="50px">Stock Quote</div>
 </a>
 
 <!-- Divider -->
@@ -53,7 +53,7 @@
 
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#buy_sell" aria-expanded="true" aria-controls="product">
-    <i class="fas fa-fw fa-list"></i>
+    <i class="fas fa-fw fa-wallet"></i>
     <span>Buy-sell Pages</span>
   </a>
   <div id="buy_sell" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -64,6 +64,24 @@
   </div>
 </li>
 
+<li class="nav-item active">
+  <a class="nav-link" href="<?php echo BASEPAGES?>index.php">
+    <i class="fas fa-fw fa-trophy"></i>
+    <span>LeaderBoard</span></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#buy_sell" aria-expanded="true" aria-controls="product">
+    <i class="fas fa-fw fa-list"></i>
+    <span>Transaction History</span>
+  </a>
+  <div id="buy_sell" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <a href="<?php echo BASEPAGES?>transaction-history.php" class="collapse-item"><i class="fas fa-plus"></i>All Transactions</a>
+      <a href="<?php echo BASEPAGES?>transaction-history-open.php" class="collapse-item"><i class="fas fa-plus"></i>Open Transactions</a>
+      <a href="<?php echo BASEPAGES?>transaction-history-closed.php" class="collapse-item"><i class="fas fa-plus"></i>Closed Transactions</a>
+    </div>
+  </div>
+</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider">

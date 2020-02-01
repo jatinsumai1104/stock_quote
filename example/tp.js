@@ -1,4 +1,5 @@
-//https://api.worldtradingdata.com/api/v1/stock?symbol=SNAP,TWTR,VOD.L&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd
+//https://api.worldtradingdata.com/api/v1/stock?symbol=SNAP,TWTR,VOD.L&api_token=ayP0nLDZrCtoAE0RVEFqN89HFdjjp6ahIlzFnq4vxeQU73QQDdiWqe5u9yDO
+
 // const url = new URL(
 //     "https://api.worldtradingdata.com/api/v1/stock"
 // );
@@ -18,7 +19,7 @@
 $("#button").on("click", function() {
     //    setInterval(function(){
         $.ajax({
-            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=AAPL&api_token=KbzMvegVlq6PGIszedPEvD4R73NrKnhdlVur1JuLzxA2yrza9KKe8tzxGyUd",
+            url: "https://api.worldtradingdata.com/api/v1/stock?symbol=AAPL&api_token=ayP0nLDZrCtoAE0RVEFqN89HFdjjp6ahIlzFnq4vxeQU73QQDdiWqe5u9yDO",
             method: "GET",
             dataType: "json",
             success: function(data) {
