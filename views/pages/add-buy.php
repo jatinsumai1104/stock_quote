@@ -1,4 +1,4 @@
- <?php
+<?php
 require_once('../../helper/constants.php');
 require_once(__DIR__.'/../../helper/init.php');
 ?>

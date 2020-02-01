@@ -107,9 +107,13 @@ class Stock
           $query="SELECT * FROM money WHERE user_id={$assoc_array['user_id']}";
           $res = $this->di->get("Database")->rawQuery($query);
           $new_balance = $res[0]["balance"] - $assoc_array["price"];
-          echo $res[0]["balance"];
-          echo $assoc_array["price"];
+        //   echo $res[0]["balance"];
+        //   echo $assoc_array["price"];
+        if($new_balance > 0 ){
           $res = $this->di->get("Database")->update("money",["balance"=>$new_balance],"user_id={$assoc_array["user_id"]}");
+        }else{
+            Session::setSession("insufficentBalance", "Don't have enough balance");
+        }
           $this->di->get("Database")->commit();
           Session::setSession("saveStock", "Stock save success");
       } catch (Exception $e) {
