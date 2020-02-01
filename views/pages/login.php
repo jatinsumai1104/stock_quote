@@ -8,11 +8,11 @@ Util::createCsrfToken();
 // echo Session::getSession("csrf_token");
 // require_once(__DIR__.'/../../helper/init.php');
 
-if(Session::getSession("employee_id") != null && Session::getSession("csrf") == null){
+if(Session::getSession("user_id") != null && Session::getSession("csrf") == null){
   Util::redirect("index");
 }
 if(isset($_COOKIE['token']) && $di->get("TokenHandler")->isValid($_COOKIE["token"],1)){
-    $_SESSION['employee_id']=$_COOKIE['user_id'];
+    $_SESSION['user_id']=$_COOKIE['user_id'];
     Util::redirect("index");
 
 }else{
