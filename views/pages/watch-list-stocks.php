@@ -52,6 +52,25 @@
     
             <!-- Earnings (Monthly) Card Example -->
             
+            <h1 class="h3 mb-0 text-gray-800">Watch List</h1>
+            <a href="#" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Stocks Into Watch List</a>
+          </div>
+          
+          <?php 
+          
+          $stocks = $di->get("WatchList")->getStocksNameByID($_GET["watch_list"]);
+          foreach($stocks as $stock){
+          ?>
+            <a href="hello">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary"> <?php echo $stock["stock_name"];?>
+                    </h6>
+                </div>
+              </div>
+            </a>
+          <?php } ?>
+          
 
             
 

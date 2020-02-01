@@ -74,5 +74,10 @@ class WatchList
       }
   }
 
+
+  public function getStocksNameByID($id){
+    return $this->di->get("Database")->readData("watch_list_stock", ["stock_name"], "watch_list_id = $id");
+  }
+
 }
 ?>
