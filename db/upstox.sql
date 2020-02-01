@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2020 at 01:51 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.33
+-- Generation Time: Feb 01, 2020 at 02:07 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -63,6 +63,20 @@ CREATE TABLE `stock_intraday` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `id` bigint(20) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `expires_at` datetime NOT NULL,
+  `is_remember` tinyint(4) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transaction_history`
 --
 
@@ -93,6 +107,14 @@ CREATE TABLE `user` (
   `DOB` date NOT NULL,
   `phone_number` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `user_name`, `password`, `email`, `DOB`, `phone_number`) VALUES
+(1, 'jatinsumai1104@gmail.com', '$2y$10$g3dYRrPlys1J1XXXimrGru2JJktruvfGGeK/yJtkKKeJZOSRILBJm', 'jatinsumai1104@gmail.com', '1999-04-11', '7058043260'),
+(2, 'jatinsumai1104@gmail.com', '$2y$10$g3dYRrPlys1J1XXXimrGru2JJktruvfGGeK/yJtkKKeJZOSRILBJm', 'ghind20@gmail.com', '1999-04-12', '7021197094');
 
 -- --------------------------------------------------------
 
@@ -142,6 +164,13 @@ ALTER TABLE `stock_intraday`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `token` (`token`);
+
+--
 -- Indexes for table `transaction_history`
 --
 ALTER TABLE `transaction_history`
@@ -188,6 +217,12 @@ ALTER TABLE `stock_intraday`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `transaction_history`
 --
 ALTER TABLE `transaction_history`
@@ -197,7 +232,7 @@ ALTER TABLE `transaction_history`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `watch_list`

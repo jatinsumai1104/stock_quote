@@ -1,5 +1,5 @@
 <?php 
-  if(Session::getSession("employee_id") == null){
+  if(Session::getSession("user_id") == null){
     Util::redirect("login");
   }
 ?>

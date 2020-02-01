@@ -6,7 +6,7 @@ class Auth {
     protected $di;
     
 
-    protected $table = 'employees';
+    protected $table = 'user';
 
     public function __construct(DependencyInjector $di){
         $this->di = $di;
@@ -57,7 +57,7 @@ class Auth {
           'email' => [
               'required' => true,
               'maxlength' => 200,
-              'unique' => 'employees',
+              'unique' => 'user',
               'email' => true
           ],
           'password' => [
@@ -85,12 +85,12 @@ class Auth {
             $insertion_array = Util::createAssocArray($data,$input);
             $address_id = $this->di->get("Database")->insert('address', $insertion_array);
 
-            $input['password_hash'] = $hashed_password;
+            $input['password'] = $hashed_password;
             $input['address_id'] = $address_id;
 
-            $data = ['first_name','last_name','email','password_hash','phone_no','gender','address_id'];
+            $data = ['first_name','last_name','email','password','phone_no','gender','address_id'];
             $insertion_array2 = Util::createAssocArray($data,$input);
-            $this->di->get("Database")->insert('employees', $insertion_array2);
+            $this->di->get("Database")->insert('user', $insertion_array2);
 
             $this->di->get("Database")->commit();
             Session::setSession("sign_up", "Sign-up success");
@@ -111,22 +111,22 @@ class Auth {
 
       // $this->di->get("Database")->beginTransaction();
 
-      if(!$this->di->get("Database")->exists("employees",["email"=>$email])){
-        Session::setSession("login", "Login employee_already_present error");
+      if(!$this->di->get("Database")->exists("user",["email"=>$email])){
+        Session::setSession("login", "Login user_already_present error");
         Util::redirect("login");
       }else{
-        $hashed_password =$this->di->get("Database")->readData("employees",["password_hash"],"email='{$email}'");
-        $db_password = $hashed_password[0]['password_hash'];
+        $hashed_password =$this->di->get("Database")->readData("user",["password"],"email='{$email}'");
+        $db_password = $hashed_password[0]['password'];
         
         if($this->di->get("Hash")->verify($password,$db_password)){
           // echo "verified";
-          $id = $this->di->get("Database")->readData("employees",["id"],"email='{$email}'");
-          Session::setSession("employee_id",$id[0]['id']);
+          $id = $this->di->get("Database")->readData("user",["id"],"email='{$email}'");
+          Session::setSession("user_id",$id[0]['id']);
           Session::setSession("login","success");
           if(isset($input['remember'])){
             $this->setCookie($id[0]['id']);
           }
-          Session::setSession("login","Login Employee success");
+          Session::setSession("login","Login User success");
           Util::redirect("index");
         }else{
           Session::setSession("login","Login Incorrect_username/password error");
