@@ -51,25 +51,18 @@
           $stocks = $di->get("WatchList")->getStocksNameByID($_GET["watch_list"]);
           foreach($stocks as $stock){
           ?>
-            <a href="hello">
+            <a href="<?php echo BASEPAGES?>stock.php?stock_name=<?php echo $stock["stock_name"];?>">
               <div class="card shadow mb-4">
-                <div class="card-header py-3">
+                <div class="card-header py-3 d-flex justify-content-around">
                     <h6 class="m-0 font-weight-bold text-primary"> <?php echo $stock["stock_name"];?>
-                    </h6>
+                    <h6 class="m-0 font-weight-bold text-primary" id="name"> <?php echo $stock["stock_name"];?>
+                    <h6 class="m-0 font-weight-bold text-primary" id="price">hi</h6>
+                    <small class="m-0 font-weight-bold text-primary" id="day_change">hi</small>
                 </div>
               </div>
             </a>
           <?php } ?>
-          
-
-            
-
-
-
-
           <!-- Content Row -->
-          
-
         </div>
         <!-- /.container-fluid -->
 
