@@ -1,2 +1,2 @@
-ErrorDocument 404 /oop-php-erp/views/pages/404.php?error=500
-ErrorDocument 500 /oop-php-erp/views/pages/500.php
+ErrorDocument 404 /stock_quote/views/pages/404.php?error=500
+ErrorDocument 500 /stock_quote/views/pages/500.php
