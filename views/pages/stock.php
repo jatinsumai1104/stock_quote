@@ -168,7 +168,7 @@
             dataType: "json",
             success: function(data) {
               console.log(data.data);
-              $("#price").text(data.data[0].price);
+              $("#price").text("$ "+data.data[0].price);
               $("#name").text(data.data[0].name);
               $("#open").text(data.data[0].price_open);
               $("#close").text(data.data[0].close_yesterday);
