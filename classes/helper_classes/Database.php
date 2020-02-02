@@ -44,7 +44,7 @@ class Database {
 
         $placeholders = ":" . implode(", :", $keys);
         $sql = "INSERT INTO {$table} ({$fields}) VALUES({$placeholders})";
-        // echo $sql;
+        echo $sql;
         $this->stmt = $this->pdo->prepare($sql);
 
         $this->stmt->execute($data);

@@ -97,6 +97,11 @@ require_once('../includes/header.php');
                                                     </div>
 
                                                     <div class="form-group">
+                                                        <label for="">Delivery</label>
+                                                        
+                                                    </div>
+
+                                                    <div class="form-group">
                                                         <label for="">Quantity Delivery</label>
                                                         <?php
                                                         $user_id = Session::getSession("user_id");
@@ -115,22 +120,57 @@ require_once('../includes/header.php');
 
                                                     <div class="form-group">
                                                         <label for="">Choose Type</label>
-                                                        <select name="order_type" id="supplier_id"
+                                                        <select name="order_type" 
                                                             class="form-control">
                                                             <option value="Intraday">Intraday</option>
                                                             <option value="Delivery">Delivery</option>
                                                         </select>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="">Quantity to sell</label>
-                                                        <input type="text" name="sell_quantity">
-                                                    </div>
+                                                    
 
                                            <input type="hidden" value="<?php echo $_GET['price'] ?>" name="realtime_price"> 
 
                                      <button type="submit" class="btn btn-primary" name="sellStock">Buy Stock</button>
 
-                               </div>
+                                                 </div>
+                                    <div class="col-md-6">
+
+                                    <div class="form-group">
+                                                        <label for="">Order Complexity</label>
+                                                        <select name="order_complexity" 
+                                                            class="form-control">
+                                                            <option value="Simple">Simple</option>
+                                                            <option value="CO">CO</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Transaction Period</label>
+                                                        <select name="intra_delivery"
+                                                            class="form-control">
+                                                            <option value="Intraday">IntraDay</option>
+                                                            <option value="Delivery">Delivery</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Choose Transaction type</label>
+                                                        <select name="transaction_price_type" id="order_transaction_type"
+                                                            class="form-control">
+                                                            <option value="Market">Market</option>
+                                                            <option value="Limit">Limit</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="" id="trigger_label"></label>
+                                                        <div id="hidden">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Quantity to sell</label>
+                                                        <input type="text" name="sell_quantity">
+                                                    </div>             
+
+                                    </div>
 
                             </form>
                                 </div>
