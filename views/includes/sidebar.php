@@ -71,7 +71,7 @@
     <span>My Stocks</span></a>
 </li>
 <li class="nav-item active">
-  <a class="nav-link" href="<?php echo BASEPAGES?>index.php">
+  <a class="nav-link" href="<?php echo BASEPAGES?>leaderboard.php">
     <i class="fas fa-fw fa-trophy"></i>
     <span>LeaderBoard</span></a>
 </li>
