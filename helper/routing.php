@@ -55,7 +55,7 @@ if (isset($_POST['saveStock'])) {
 
 if (isset($_POST['sellStock'])) {
   $di->get("Stock")->sellStock($_POST);
-  //Util::redirect("index");
+  Util::redirect("index");
 }
 
 if(isset($_POST['add_watch'])){
