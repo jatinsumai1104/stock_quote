@@ -65,15 +65,25 @@
     </div>
   </div>
 </li>
-<li class="nav-item active">
+<li class="nav-item ">
   <a class="nav-link" href="<?php echo BASEPAGES?>my_stocks.php">
     <i class="fas fa-fw fa-crown"></i>
     <span>My Stocks</span></a>
 </li>
-<li class="nav-item active">
+<li class="nav-item ">
   <a class="nav-link" href="<?php echo BASEPAGES?>leaderboard.php">
     <i class="fas fa-fw fa-trophy"></i>
     <span>LeaderBoard</span></a>
+</li>
+<li class="nav-item ">
+  <a class="nav-link" href="<?php echo BASEPAGES?>articles.php">
+    <i class="fas fa-fw fa-trophy"></i>
+    <span>Articles</span></a>
+</li>
+<li class="nav-item ">
+  <a class="nav-link" href="<?php echo BASEPAGES?>video.php">
+    <i class="fas fa-fw fa-video"></i>
+    <span>Video</span></a>
 </li>
 
 <!-- Divider -->

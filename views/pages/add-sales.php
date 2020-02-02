@@ -73,7 +73,7 @@ require_once('../includes/header.php');
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="">Intraday</label>
+                                                        <h3 for="">Intraday</h3>
                                                         
                                                     </div>
 
@@ -87,17 +87,21 @@ require_once('../includes/header.php');
                                                         $res = $di->get("Database")->rawQuery($query);
                                                         if(count($res) > 0){
                                                         ?>
+
                                                         <input type="text" class="form-control" name="quantity" 
-                                                            aria-describedby="helpId" placeholder="" value="<?php echo $res[0]["quantity"]?>">
+                                                            aria-describedby="helpId" placeholder="" value="<?php echo $res[0]["quantity"]?>" disabled>
 
                                                           
                                                             <?php
-                                                        }
+                                                        }else{
                                                             ?>
+                                                            <input type="text" class="form-control" name="quantity" 
+                                                            aria-describedby="helpId" placeholder="" value="0" disabled>
+                                                            <?php }?>
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="">Delivery</label>
+                                                        <h3 for="">Delivery</h3>
                                                         
                                                     </div>
 
@@ -114,8 +118,11 @@ require_once('../includes/header.php');
                                                             aria-describedby="helpId" placeholder="" value="<?php echo $res[0]["quantity"]?>">
                                                             
                                                             <?php
-                                                        }
+                                                        }else{
                                                             ?>
+                                                            <input type="text" class="form-control" name="quantity" 
+                                                            aria-describedby="helpId" placeholder="" value="0" disabled>
+                                                            <?php }?>
                                                     </div>
 
                                                     <div class="form-group">
@@ -182,7 +189,11 @@ require_once('../includes/header.php');
 
                 </div>
                 <!-- End of Main Content -->
-
+<div class="row custom-uxTour">
+    <div class="col-md-6 border">
+        Hello
+    </div>
+</div>
                 <!-- Footer -->
                 <?php
       require_once('../includes/footer.php');

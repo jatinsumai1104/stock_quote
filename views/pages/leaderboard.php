@@ -67,7 +67,9 @@ require_once('../includes/header.php');
                                         <div class="border-left-primary shadow p-3 d-flex justify-content-between">
                                           <h3><?php echo $i+1;?> <?php 
                                             if($i == 0){
-                                              echo '<i class="fas fa-trophy"></i>';
+                                              echo '<i class="fas fa-trophy" style="background: -webkit-linear-gradient(left, #8f6B29, #FDE08D, #DF9F28);
+                                              -webkit-background-clip: text;
+                                              -webkit-text-fill-color: transparent; "></i>';
                                             }
                                           ?></h3>
                                           <h3><?php echo $rankings[$i]["user_name"];?></h3>

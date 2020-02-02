@@ -136,16 +136,17 @@ class Stock
             if(count($res) == 0){
                 $res = $temp;
             }else{
-                array_push($res, $temp);
+                array_push($res, $temp[0]);
             }
         }
-        
+        // var_dump($res);
         return $res;
     }
 
 
   public function sellStock($data){
     try {
+        // var_dump(Session::getSession("user_id"));
         $this->di->get("Database")->beginTransaction();
         $assoc_array["user_id"]  = Session::getSession("user_id");
         if($data["order_type"] == "Intraday"){
@@ -169,53 +170,54 @@ class Stock
         }
 
         $assoc_array = [];
-            $assoc_array["user_id"]  = Session::getSession("user_id");
-            $assoc_array["quantity"] = $data["sell_quantity"];
-            $assoc_array["stock_name"] = $data["stock_name"];
-            if($data["transaction_price_type"] == "Limit"){
-                $assoc_array["transaction_status"] = 0;
-                $assoc_array["transaction_price_type"] = 0;
-                $assoc_array["buy_sell"]=1;
-                $assoc_array["price"]=intval($data["trigger_quantity"]*$data["realtime_price"]);
-                if($data["order_complexity"] == "Simple"){
-                    $assoc_array["order_complexity"] = 0;   
-                }else{
-                    $assoc_array["order_complexity"] = 1;   
-                }
-                if($data["intra_delivery"] == "Intraday"){
-                    $assoc_array["intra_delivery"] = 0;
-                }else{
-                    $assoc_array["intra_delivery"] = 1;
-                }
-                $assoc_array["transaction_date"] = date("Y-m-d");
-
+        $assoc_array["user_id"]  = Session::getSession("user_id");
+        $assoc_array["quantity"] = $data["sell_quantity"];
+        $assoc_array["stock_name"] = $data["stock_name"];
+        if($data["transaction_price_type"] == "Limit"){
+            $assoc_array["transaction_status"] = 0;
+            $assoc_array["transaction_price_type"] = 0;
+            $assoc_array["buy_sell"]=1;
+            $assoc_array["price"]=intval($data["trigger_quantity"]*$data["realtime_price"]);
+            if($data["order_complexity"] == "Simple"){
+                $assoc_array["order_complexity"] = 0;   
             }else{
-                $assoc_array["transaction_status"] = 1;
-                $assoc_array["transaction_price_type"] = 1;
-                $assoc_array["buy_sell"]=1;
-                $assoc_array["price"]=intval($data["sell_quantity"]*$data["realtime_price"]);
-                if($data["order_complexity"] == "Simple"){
-                    $assoc_array["order_complexity"] = 0;   
-                }else{
-                    $assoc_array["order_complexity"] = 1;   
-                }
-                if($data["intra_delivery"] == "Intraday"){
-                    $assoc_array["intra_delivery"] = 0;
-                }else{
-                    $assoc_array["intra_delivery"] = 1;
-                }
-                $assoc_array["transaction_date"] = date("Y-m-d");
+                $assoc_array["order_complexity"] = 1;   
             }
-            
-            var_dump($assoc_array);
-            $transaction_history_id = $this->di->get("Database")->insert("transaction_history", $assoc_array); 
-            var_dump($assoc_array);
+            if($data["intra_delivery"] == "Intraday"){
+                $assoc_array["intra_delivery"] = 0;
+            }else{
+                $assoc_array["intra_delivery"] = 1;
+            }
+            $assoc_array["transaction_date"] = date("Y-m-d");
 
-        $query="SELECT * FROM money WHERE user_id={$assoc_array['user_id']}";
-          $res = $this->di->get("Database")->rawQuery($query);
+        }else{
+            $assoc_array["transaction_status"] = 1;
+            $assoc_array["transaction_price_type"] = 1;
+            $assoc_array["buy_sell"]=1;
+            $assoc_array["price"]=intval($data["sell_quantity"]*$data["realtime_price"]);
+            if($data["order_complexity"] == "Simple"){
+                $assoc_array["order_complexity"] = 0;   
+            }else{
+                $assoc_array["order_complexity"] = 1;   
+            }
+            if($data["intra_delivery"] == "Intraday"){
+                $assoc_array["intra_delivery"] = 0;
+            }else{
+                $assoc_array["intra_delivery"] = 1;
+            }
+            $assoc_array["transaction_date"] = date("Y-m-d");
+        }
+            
+            // var_dump($assoc_array);
+            $transaction_history_id = $this->di->get("Database")->insert("transaction_history", $assoc_array); 
+            // var_dump($assoc_array);
+            var_dump($_SESSION['user_id']);
+        $query="SELECT * FROM money WHERE user_id=".$_SESSION['user_id'];
+        // echo $query;  
+        $res = $this->di->get("Database")->rawQuery($query);
           $new_balance = $res[0]["balance"] + $data["sell_quantity"]*$data["realtime_price"];
-          //echo $new_balance;
-          
+        //   die("hello");
+        //   die($new_balance);
           $res = $this->di->get("Database")->update("money",["balance"=>$new_balance],"user_id={$assoc_array["user_id"]}");
 
           $this->di->get("Database")->commit();
