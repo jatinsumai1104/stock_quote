@@ -80,7 +80,7 @@ $.ajax({
     success: function($data) {
       $articles = $("#articles");
       for($i = 2; $i < 12; $i++){
-        $articles.append('<div class="card mb-12 mb-5"> <img class="card-img-top"  src="'+ $data.articles[$i]["urlToImage"] +'" alt="Card image cap"> <div class="card-body"> <h2 class="card-title">'+ $data.articles[$i]["title"] +'</h2> <p class="card-text">'+ $data.articles[$i]["content"] +'</p> </div><div class="card-footer text-muted"> Posted on '+ $data.articles[$i]["publishedAt"] +' by <a href="#">'+ $data.articles[$i]["author"] +'</a> </div></div></div>');
+        $articles.append('<div class="col-lg-6 mb-4" style="height: 100%"><div class="card shadow mb-4"> <div class="card-header py-3"> <h6 class="m-0 font-weight-bold text-primary">'+ $data.articles[$i]["title"] +'</h6> </div><div class="card-body"> <div class="text-center"> <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="'+ $data.articles[$i]["urlToImage"] +'" alt="Article Related Image"> </div><p>'+ $data.articles[$i]["description"] +'</p><a target="_blank" class="btn btn-primary" rel="nofollow" href="'+ $data.articles[$i]["url"] +'">Read More &rarr;</a> </div><div class="card-footer text-muted"> Posted on '+ $data.articles[$i]["publishedAt"] +' by <a href="#">'+ $data.articles[$i]["author"] +'</a> </div></div></div>');
       }
     },
     error: function(error) {

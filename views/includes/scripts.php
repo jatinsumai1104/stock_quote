@@ -19,6 +19,7 @@
 
 <!-- Toastr Scripts -->
 <script src="<?php echo BASEASSETS; ?>vendor/bootstrap-toastr/toastr.min.js"></script>
+<script src="<?php echo BASEASSETS; ?>vendor/uxTour/uxTour.js"></script>
 <script>
   toastr.options = {
       "closeButton": true,
@@ -39,3 +40,6 @@
   }
 </script>
 <?php require_once(__DIR__."/toasters.php");?>
+<?php
+  require_once('../includes/uxTour.php');
+?>
