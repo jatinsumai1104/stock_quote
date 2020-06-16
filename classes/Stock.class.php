@@ -231,5 +231,15 @@ class Stock
     }
   }
 
+
+  public function getPendingRequests(){
+      $query = "select count(*) as count from transaction_history where user_id = ".Session::getSession('user_id')." and transaction_status = 0";
+      return $this->di->get("Database")->rawQuery($query)[0];
+  }
+
+  public function getAllRequests(){
+    $query = "select count(*) as count from transaction_history where user_id = ".Session::getSession('user_id');
+    return $this->di->get("Database")->rawQuery($query)[0];
+}
 }
 ?>

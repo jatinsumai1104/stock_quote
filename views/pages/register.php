@@ -61,31 +61,13 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="text" name="block_no" class="form-control form-control-user" id="exampleInputEmail" placeholder="Address Block No">
+                  <input type="text" name="block_no" class="form-control form-control-user" id="exampleInputEmail" placeholder="Full Name (as on card)">
                 </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" name="street" class="form-control form-control-user" id="exampleFirstName" placeholder="Street">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="text" name="city" class="form-control form-control-user" id="exampleLastName" placeholder="City">
-                  </div>
+                <div class="form-group">
+                  <input type="text" name="block_no" class="form-control form-control-user" id="exampleInputEmail" placeholder="Your Card Number">
                 </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" name="pincode" class="form-control form-control-user" id="exampleFirstName" placeholder="Pin Code">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="text" name="town"class="form-control form-control-user" id="exampleLastName" placeholder="Town">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" name="state" class="form-control form-control-user" id="exampleFirstName" placeholder="State">
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="text" name="country"class="form-control form-control-user" id="exampleLastName" placeholder="COuntry">
-                  </div>
+                <div class="form-group">
+                  <input type="text" name="block_no" class="form-control form-control-user" id="exampleInputEmail" placeholder="CVV">
                 </div>
                 <button type ="submit" name="register_button" class="btn btn-primary btn-user btn-block">
                   Register Account

@@ -10,9 +10,10 @@ class TransactionHistory{
 
     public function getHistory($user_id){
         try{
+
             $this->di->get('Database')->beginTransaction();
-            $query = "SELECT * FROM transaction_history WHERE user_id = $user_id ORDER BY id DESC";
-            
+            $query = "SELECT * FROM transaction_history WHERE user_id = $user_id ORDER BY id DESC";            
+            die($query);
             $result = $this->di->get('Database')->rawQuery($query);
 
             $this->di->get('Database')->commit();

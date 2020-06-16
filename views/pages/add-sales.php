@@ -137,7 +137,7 @@ require_once('../includes/header.php');
 
                                            <input type="hidden" value="<?php echo $_GET['price'] ?>" name="realtime_price"> 
 
-                                     <button type="submit" class="btn btn-primary" name="sellStock">Buy Stock</button>
+                                     <button type="submit" class="btn btn-primary" name="sellStock">Sell Stock</button>
 
                                                  </div>
                                     <div class="col-md-6">
@@ -189,11 +189,6 @@ require_once('../includes/header.php');
 
                 </div>
                 <!-- End of Main Content -->
-<div class="row custom-uxTour">
-    <div class="col-md-6 border">
-        Hello
-    </div>
-</div>
                 <!-- Footer -->
                 <?php
       require_once('../includes/footer.php');
