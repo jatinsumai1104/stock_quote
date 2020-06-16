@@ -4,4 +4,4 @@
 
 ## Demo Video
 
-![](assets/video/tutorial-2.gif)
+![](assets/video/tutorial-1.gif)
